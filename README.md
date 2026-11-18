@@ -10,6 +10,10 @@ Aplicación web para registrar clientes, vehículos y órdenes de trabajo de un 
 
 El navegador usa `fetch` para enviar solicitudes a `api.php`. PHP valida y procesa los datos, consulta la base con PDO y devuelve respuestas JSON que JavaScript presenta en la interfaz.
 
+El JavaScript del frontend está separado por responsabilidades: `public/js/clientes.js`, `vehiculos.js`, `ordenes.js` y `empleados.js` contienen las secciones del sistema; `public/js/app.js` reúne las funciones compartidas, la navegación y el arranque. `public/index.html` carga primero los módulos de sección y al final `app.js`.
+
+En el backend, `api.php` inicia la sesión, prepara los datos de la petición, valida el acceso y deriva cada acción a `controllers/`. Las operaciones de clientes, vehículos, órdenes y empleados están separadas por archivo; las funciones compartidas para cargar imágenes están en `includes/uploads.php`.
+
 ## Funcionalidades
 
 - Registro e inicio de sesión de empleados; las contraseñas se guardan cifradas con `password_hash`.

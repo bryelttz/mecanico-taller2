@@ -1,5 +1,5 @@
 .env
-public/uploads/
+public/uploads
 public/images/*
 !public/images/.gitkeep
 *.log
