@@ -37,12 +37,12 @@ entity PRESUPUESTO_ITEMS
 entity REVISION_IMAGENES
 entity AUDITORIA
 
-CLIENTES ||--o{ VEHICULOS : posee
-VEHICULOS ||--o{ ORDENES : recibe
-EMPLEADOS o|--o{ ORDENES : trabaja
-ORDENES ||--o{ PRESUPUESTO_ITEMS : incluye
-ORDENES ||--o{ REVISION_IMAGENES : documenta
-EMPLEADOS o|--o{ AUDITORIA : realiza
+CLIENTES "1" -- "0..*" VEHICULOS : posee
+VEHICULOS "1" -- "0..*" ORDENES : recibe
+EMPLEADOS "0..1" -- "0..*" ORDENES : trabaja
+ORDENES "1" -- "0..*" PRESUPUESTO_ITEMS : incluye
+ORDENES "1" -- "0..*" REVISION_IMAGENES : documenta
+EMPLEADOS "0..1" -- "0..*" AUDITORIA : realiza
 @enduml
 ```
 
